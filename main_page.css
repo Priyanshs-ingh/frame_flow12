@@ -1,0 +1,110 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    background-color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #000;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+header nav ul {
+    list-style: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+.title-area {
+    text-align: left;
+}
+
+.title-area .quote {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.title-area h2 {
+    font-size: 60px;
+    margin: 0px;
+}
+
+.title-area .category-links {
+    padding: 20px 0;
+}
+
+.title-area .category-links a {
+    color: white;
+    text-decoration: none;
+    margin-right: 10px;
+    font-size: 12px;
+}
+
+.title-area .category-links span {
+    color: #6200EA; /* Purple star color */
+}
+
+.book-button {
+    padding: 10px 20px;
+    background-color: #6200EA;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none; /* Ensures the link does not have an underline */
+    display: inline-block;
+}
+
+.categories {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.category {
+    text-align: center;
+    margin: 10px;
+}
+
+.category img {
+    width: 100%;
+    height: auto;
+}
+
+.category h3 {
+    font-size: 18px;
+    color: #fff;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #222;
+    color: white;
+}
