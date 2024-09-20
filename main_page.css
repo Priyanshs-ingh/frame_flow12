@@ -297,3 +297,209 @@ details p {
     font-size: 14px;
     margin-top: 10px;
 }
+
+.testimonials-section {
+    background-color: #222;
+    color: white;
+    padding: 40px;
+    text-align: left;
+}
+
+.testimonials-section h6 {
+    text-align: left;
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.testimonials-section h1 {
+    text-align: left;
+    font-size: 32px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.total-reviews {
+    font-size: 16px;
+    color: #aaa;
+    margin-bottom: 20px;
+}
+
+.view-all-testimonials {
+    float: right;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.testimonials {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.testimonial {
+    background-color: #333;
+    padding: 20px;
+    width: 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: relative; /* Position relative to place social links inside the testimonial */
+}
+
+.testimonial .name,
+.testimonial .location {
+    font-size: 16px;
+    color: #ccc;
+    margin-bottom: 5px;
+}
+
+.testimonial .review {
+    font-size: 14px;
+    color: #aaa;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.rating .star {
+    color: #ffd700; /* Gold color for stars */
+    margin-right: 2px;
+}
+
+.social-links {
+    position: absolute; /* Position the social links inside the testimonial card */
+    right: 20px; /* Adjust this value to control the distance from the right */
+    top: 40px; /* Adjust this value to control the distance from the bottom */
+}
+
+.social-links a {
+    margin-right: 10px;
+    display: inline-block; /* Ensure the icons are aligned properly */
+}
+
+.social-links img {
+    width: 20px; /* Set according to your icon size */
+    height: auto;
+}
+
+/* Add hover effects for social links if needed */
+.social-links a:hover {
+    opacity: 0.8;
+}
+
+/* Photography Menu Section */
+.photography-menu {
+    background-color: #222;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.menu-item {
+    color: #ddd;
+    margin: 0 10px;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.star-separator {
+    color: #ffd700; /* Gold color for stars */
+    margin: 0 5px; /* Adjust for space between stars and menu items */
+}
+.footer {
+    background-color: #121212; /* Dark background */
+    padding: 60px 20px; /* Increased padding for more space */
+    text-align: center; /* Center text */
+    border-top: 1px solid #444; /* Top border */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between; /* More space between columns */
+    align-items: flex-start; /* Align items at the start */
+    flex-wrap: wrap; /* Wrap in smaller screens */
+    max-width: 1200px; /* Limit width */
+    margin: 0 auto 60px; /* Center content and add space below */
+}
+
+.book-now {
+    flex: 1; /* Take more space */
+    max-width: 400px; /* Increase width for the book now section */
+    margin-bottom: 60px; /* Increased space below */
+}
+
+.book-now .highlight-text {
+    font-size: 18px; /* Larger text */
+    color: #888; /* Gray text */
+    margin-bottom: 30px; /* More space below text */
+}
+
+.book-button {
+    background-color: #6a0dad; /* Button color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    padding: 20px 40px; /* Increased padding for larger button */
+    cursor: pointer; /* Pointer cursor */
+    font-size: 24px; /* Larger font size */
+    border-radius: 40px; /* More rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.book-button:hover {
+    background-color: #8a2be2; /* Slightly lighter purple on hover */
+}
+
+.footer-links {
+    display: flex; /* Flex layout */
+    justify-content: space-between; /* Evenly space */
+    width: 70%; /* Adjust width as needed */
+    flex-wrap: wrap; /* Wrap content */
+    margin-bottom: 60px; /* Increased space below */
+}
+
+.footer-column {
+    flex: 1 1 200px; /* Take equal space with min width */
+    margin: 20px; /* Space around */
+}
+
+.footer-column h4 {
+    font-size: 18px; /* Font size */
+    color: white; /* White text */
+    margin-bottom: 10px; /* Margin */
+}
+
+.footer-column a {
+    display: block; /* Block links */
+    color: #888; /* Link color */
+    text-decoration: none; /* No underline */
+    margin-bottom: 5px; /* Margin */
+    font-size: 14px; /* Font size */
+}
+
+.footer-column a:hover {
+    color: #ffd700; /* Hover color */
+}
+
+.social-icons {
+    display: flex; /* Flex layout */
+    justify-content: center; /* Center align */
+    margin-bottom: 20px; /* Margin */
+    padding-top: 20px; /* Space above */
+    border-top: 1px solid #444; /* Top border to separate */
+}
+
+.social-icons a {
+    margin: 0 15px; /* Increased spacing */
+    
+}
+
+.social-icons img {
+    width: 30px; /* Width */
+    height: 30px; /* Height */
+}
