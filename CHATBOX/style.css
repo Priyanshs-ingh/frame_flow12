@@ -1,0 +1,267 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #151515;
+    color: white;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #151515;
+    /* justify-content: flex-end; */
+}
+
+.navbar h1 {
+    color: #fff;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.navbar ul li {
+    margin:0 15px;  
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.contact-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* USERINFODETAIL */
+
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.user-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.user-details p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.user-details span {
+    font-size: 14px;
+    color: #aaa;
+}
+
+    /* SIDEBAR */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 25%;
+    background-color: #111;
+    padding: 20px;
+}
+
+.search input {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    border: none;
+    border-radius: 20px;
+    color: white;
+}
+
+.contact-list {
+    margin-top: 20px;
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.contact img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.contact-details p {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.contact-details span {
+    font-size: 14px;
+    color: #aaa;
+}
+
+.chat-section {
+    width: 75%;
+    background-color: #222;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #333;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.profile-details h3 {
+    margin-bottom: 5px;
+}
+
+.profile-details span {
+    font-size: 14px;
+    color: #aaa;
+}
+
+.chat-icons button {
+    background-color: #333;
+    border: none;
+    padding: 10px;
+    color: white;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.chat-body {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.message {
+    margin-bottom: 15px;
+    max-width: 60%;
+    padding: 10px 15px;
+    border-radius: 20px;
+}
+
+.sent {
+    background-color: #333;
+    margin-left: auto;
+}
+
+.received {
+    background-color: #444;
+    margin-right: auto;
+}
+
+.attachment {
+    background-color: #555;
+    padding: 5px 10px;
+    margin-top: 5px;
+    border-radius: 10px;
+}
+
+.chat-footer {
+    padding: 20px;
+    border-top: 1px solid #333;
+    display: flex;
+    align-items: center;
+}
+
+.chat-footer input {
+    width: 85%;
+    padding: 10px;
+    background-color: #333;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    margin-right: 10px;
+}
+
+.chat-footer button {
+    background-color: #555;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: #151515;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+footer .cta-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+footer .footer-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+footer .footer-nav ul li {
+    margin: 0 15px;
+}
+
+footer .footer-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+footer .footer-links {
+    margin-top: 20px;
+}
+
+footer .footer-links a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+}
