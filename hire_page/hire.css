@@ -2,14 +2,19 @@ body {
     font-family: 'Manrope', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #000000;
+    background-color: #0b0b0b;
     color: white;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
-
+/* general reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 .logo a {
     color: white;
@@ -18,34 +23,46 @@ body {
     font-weight: bold;
 }
 
-nav .nav-links, .contact-link {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+/* Navbar */
+.navbar {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #151515;
 }
 
-.nav-links {
-    justify-content: center;
-    flex-grow: 1;
+.navbar h1 {
+    color: #fff;
 }
 
-.contact-link {
-    justify-content: flex-end;
+.navbar ul {
+    display: flex;
+    list-style: none;
 }
 
-nav ul li a {
-    color: white;
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: #fff;
     text-decoration: none;
+}
+
+.contact-btn {
     padding: 10px 20px;
-    font-size: 18px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
 }
 
 .page-title {
     font-family: 'manrope';
     text-align: center;
     font-size: 60px;
-    margin: 20px 0;
+    margin: 0px;
     flex-grow: 1;
 }
 
@@ -195,7 +212,7 @@ button.work-button:hover {
     margin-top: 3rem;
     gap: 50px;
     padding-left: 100px;
-
+}
 .services-content {
     width: 50%;
 }
