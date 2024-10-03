@@ -6,32 +6,47 @@ body {
     margin: 0;
     padding: 0;
 }
-
-header {
-    background-color: #000;
-    padding: 20px 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
-}
-
-header nav ul {
-    list-style: none;
-    text-align: center;
+/* General Reset */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-header nav ul li {
-    display: inline;
-    margin-right: 20px;
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #151515;
 }
 
-header nav ul li a {
-    color: white;
+.navbar h1 {
+    color: #fff;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: #fff;
     text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
 }
 
+.contact-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+}
 .hero {
     display: flex;
     justify-content: space-between;
@@ -105,12 +120,12 @@ header nav ul li a {
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #222;
+    background-color: #000000;
     color: white;
 }
 
 .community-work {
-    background-color: #333;
+    background-color: #0e0d0d;
     color: white;
     padding: 40px 20px;
     text-align: center;
@@ -188,7 +203,7 @@ footer {
 }
 
 .about-frame-flow {
-    background-color: #222; /* Dark background for contrast */
+    background-color: #030303; /* Dark background for contrast */
     color: white;
     padding: 20px 40px;
     display: flex;
@@ -277,7 +292,7 @@ footer {
 }
 
 details {
-    background-color: #333;
+    background-color: #302f2f;
     padding: 15px;
     margin-bottom: 10px;
     border-radius: 5px;
