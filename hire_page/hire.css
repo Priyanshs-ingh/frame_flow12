@@ -75,9 +75,12 @@ body {
 }
 
 .profile-image img {
-    width: 60%;  /* Increase the width as needed */
-    margin-left: 80px; /* Adjust left margin to shift the image right */
+    width: 300px;  /* Sets a specific width for all images */
+    height: 300px; /* Sets a specific height for all images */
+    object-fit: cover; /* Ensures the images cover the area without distorting aspect ratio */
+    border-radius: 10px; /* Gives all images rounded corners */
 }
+
 
 .profile-text {
     width: 50%;
@@ -90,9 +93,19 @@ body {
 }
 
 .social-links a {
-    margin-right: 15px;
-    font-size: 18px;
-    font-weight: bold;
+    display: inline-block;
+    width: 40px;  /* Size of the circle */
+    height: 40px;  /* Size of the circle */
+    background-color: #444040;  /* White background for the circle */
+    color: #007bff;  /* Blue icons, adjust as needed */
+    border-radius: 50%;  /* Makes the background a circle */
+    text-align: center;  /* Centers the icon within the circle */
+    line-height: 40px;  /* Centers the icon vertically */
+    margin: 0 10px;  /* Spacing between icons */
+}
+
+.social-links a i {
+    vertical-align: middle;  /* Aligns the font awesome icon vertically within the a tag */
 }
 
 button {
@@ -132,7 +145,7 @@ button {
 }
 .contact-btn {
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #1872cc;
     color: #fff;
     border-radius: 5px;
     text-decoration: none;
@@ -192,7 +205,7 @@ button.work-button {
     width: 100%;
     padding: 10px;
     background-color: #007bff;
-    color: white;
+    color: rgb(233, 225, 225);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -222,8 +235,9 @@ button.work-button:hover {
 }
 
 .service-image img {
-    width: 70%;
-    height: auto;
+    width: 80%;
+    height: 300px;
+    object-fit: cover;
     border-radius: 10px; /* Optional: Adds rounded corners to the image */
     
 }
