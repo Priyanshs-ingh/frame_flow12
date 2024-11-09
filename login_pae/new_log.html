@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sign In and Sign Up Form</title>   
+    <script src="https://kit.fontawesome.com/c4254e2f25.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(rgba(0,0,50,0.8), rgba(0,0,50,0.8)), url('maksim-samuilionak-dgFA4gswn_4-unsplash.jpg');
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+        }
+
+        .form-box {
+            width: 90%;
+            max-width: 400px;
+            background: #fff;
+            padding: 30px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        }
+
+        .form-box h1 {
+            font-size: 24px;
+            color: #03a9f4;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .form-box h1::after {
+            content: '';
+            width: 30px;
+            height: 4px;
+            border-radius: 3px;
+            background: #03a9f4;
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .input-field {
+            background: #eaeaea;
+            margin: 15px 0;
+            border-radius: 3px;
+            display: flex;  
+            align-items: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .input-field:focus-within {
+            border-color: #03a9f4;
+            background: #f5f5f5;
+        }
+
+        .input-field i {
+            margin: 0 15px;
+            color: #999;
+        }
+
+        .input-field input {
+            width: 100%;
+            background: transparent;
+            border: 0;
+            outline: none;
+            padding: 15px 10px;
+            font-size: 16px;
+        }
+
+        .error-text {
+            color: #ff3860;
+            font-size: 12px;
+            text-align: left;
+            margin: 5px 0;
+            display: none;
+        }
+
+        .btn-field {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .btn-field button {
+            flex: 1;
+            margin: 0 10px;
+            background: #03a9f4;
+            color: #fff;
+            height: 45px;
+            border-radius: 25px;
+            border: none;
+            cursor: pointer;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-field button:hover {
+            background: #0288d1;
+        }
+
+        .btn-field button.disable {
+            background: #eaeaea;
+            color: #555;
+        }
+
+        .form {
+            display: none;
+        }
+
+        .form.active {
+            display: block;
+        }
+
+        .switch-form {
+            margin-top: 20px;
+            color: #666;
+        }
+
+        .switch-form a {
+            color: #03a9f4;
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .success-message {
+            color: #4CAF50;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h1 id="title">Welcome</h1>
+
+            <!-- Sign Up Form -->
+            <form id="signupForm" class="form">
+                <div class="input-field">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" placeholder="Name" id="signup-name">
+                </div>
+                <div class="error-text" id="name-error"></div>
+
+                <div class="input-field">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" placeholder="Email" id="signup-email">
+                </div>
+                <div class="error-text" id="signup-email-error"></div>
+
+                <div class="input-field">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" placeholder="Password" id="signup-password">
+                </div>
+                <div class="error-text" id="signup-password-error"></div>
+
+                <div class="input-field">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" placeholder="Confirm Password" id="signup-confirm-password">
+                </div>
+                <div class="error-text" id="signup-confirm-password-error"></div>
+
+                <button type="submit" class="btn-field">Sign Up</button>
+                <div class="switch-form">
+                    Already have an account? <a onclick="toggleForm('signin')">Sign In</a>
+                </div>
+            </form>
+
+            <!-- Sign In Form -->
+            <form id="signinForm" class="form">
+                <div class="input-field">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" placeholder="Email" id="signin-email">
+                </div>
+                <div class="error-text" id="signin-email-error"></div>
+
+                <div class="input-field">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" placeholder="Password" id="signin-password">
+                </div>
+                <div class="error-text" id="signin-password-error"></div>
+
+                <button type="submit" class="btn-field">Sign In</button>
+                <div class="switch-form">
+                    Don't have an account? <a onclick="toggleForm('signup')">Sign Up</a>
+                </div>
+                <p class="switch-form">
+                    <a href="#" onclick="forgotPassword()">Forgot Password?</a>
+                </p>
+            </form>
+
+            <div class="success-message" id="successMessage"></div>
+        </div>
+    </div>
+
+    <script>
+        // Show sign in form by default
+        document.addEventListener('DOMContentLoaded', () => {
+            toggleForm('signin');
+        });
+
+        function toggleForm(formType) {
+            const title = document.getElementById('title');
+            const signupForm = document.getElementById('signupForm');
+            const signinForm = document.getElementById('signinForm');
+            const successMessage = document.getElementById('successMessage');
+
+            // Reset forms and hide success message
+            signupForm.reset();
+            signinForm.reset();
+            successMessage.style.display = 'none';
+            clearErrors();
+
+            if (formType === 'signup') {
+                title.textContent = 'Sign Up';
+                signupForm.classList.add('active');
+                signinForm.classList.remove('active');
+            } else {
+                title.textContent = 'Sign In';
+                signinForm.classList.add('active');
+                signupForm.classList.remove('active');
+            }
+        }
+
+        function clearErrors() {
+            const errorElements = document.querySelectorAll('.error-text');
+            errorElements.forEach(element => {
+                element.style.display = 'none';
+                element.textContent = '';
+            });
+        }
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        function showError(elementId, message) {
+            const errorElement = document.getElementById(elementId);
+            errorElement.textContent = message;
+            errorElement.style.display = 'block';
+        }
+
+        function showSuccess(message) {
+            const successMessage = document.getElementById('successMessage');
+            successMessage.textContent = message;
+            successMessage.style.display = 'block';
+        }
+
+        // Sign Up Form Submission
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            clearErrors();
+
+            const name = document.getElementById('signup-name').value;
+            const email = document.getElementById('signup-email').value;
+            const password = document.getElementById('signup-password').value;
+            const confirmPassword = document.getElementById('signup-confirm-password').value;
+
+            let isValid = true;
+
+            if (!name) {
+                showError('name-error', 'Name is required');
+                isValid = false;
+            }
+
+            if (!email) {
+                showError('signup-email-error', 'Email is required');
+                isValid = false;
+            } else if (!validateEmail(email)) {
+                showError('signup-email-error', 'Please enter a valid email');
+                isValid = false;
+            }
+
+            if (!password) {
+                showError('signup-password-error', 'Password is required');
+                isValid = false;
+            } else if (password.length < 6) {
+                showError('signup-password-error', 'Password must be at least 6 characters');
+                isValid = false;
+            }
+
+            if (password !== confirmPassword) {
+                showError('signup-confirm-password-error', 'Passwords do not match');
+                isValid = false;
+            }
+
+            if (isValid) {
+                // Here you would typically send the data to your server
+                console.log('Sign Up Data:', { name, email, password });
+                showSuccess('Sign up successful! Please check your email for verification.');
+                this.reset();
+            }
+        });
+
+        // Sign In Form Submission
+        document.getElementById('signinForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            clearErrors();
+
+            const email = document.getElementById('signin-email').value;
+            const password = document.getElementById('signin-password').value;
+
+            let isValid = true;
+
+            if (!email) {
+                showError('signin-email-error', 'Email is required');
+                isValid = false;
+            } else if (!validateEmail(email)) {
+                showError('signin-email-error', 'Please enter a valid email');
+                isValid = false;
+            }
+
+            if (!password) {
+                showError('signin-password-error', 'Password is required');
+                isValid = false;
+            }
+
+            if (isValid) {
+                // Here you would typically send the data to your server
+                console.log('Sign In Data:', { email, password });
+                showSuccess('Sign in successful! Redirecting...');
+                this.reset();
+            }
+        });
+
+        function forgotPassword() {
+            const email = document.getElementById('signin-email').value;
+            if (!email) {
+                showError('signin-email-error', 'Please enter your email address');
+                return;
+            }
+            if (!validateEmail(email)) {
+                showError('signin-email-error', 'Please enter a valid email');
+                return;
+            }
+            // Here you would typically send a password reset email
+            showSuccess('Password reset link has been sent to your email.');
+        }
+    </script>
+</body>
+</html>
