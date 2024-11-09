@@ -1,0 +1,68 @@
+[
+    {
+        "image": "images/img1.jpg",
+        "badges": ["PORTRAIT", "TOP RATED"],
+        "title": "Capturing the Soul: Portrait Photography",
+        "rating": "4.8",
+        "reviews": "670",
+        "duration": "2 hours",
+        "author": "Emily Rivers",
+        "description": "Highly acclaimed portrait photographer featured in major magazines; specializes in capturing emotions in every frame.",
+        "price": "$12"
+    },
+    {
+        "image": "images/img2.jpg",
+        "badges": ["WEDDING", "BEST SELLER"],
+        "title": "Unforgettable Wedding Moments",
+        "rating": "5.0",
+        "reviews": "980",
+        "duration": "6 hours",
+        "author": "Liam Hart",
+        "description": "Award-winning wedding photographer recognized for crafting unforgettable memories with creativity and attention to detail.",
+        "price": "$50"
+    },
+    {
+        "image": "images/img3.jpg",
+        "badges": ["EVENT", "HIGHLY RECOMMENDED"],
+        "title": "Dynamic Event Photography",
+        "rating": "4.7",
+        "reviews": "430",
+        "duration": "4 hours",
+        "author": "Sophia Lane",
+        "description": "Specialist in high-energy event photography with a knack for capturing the most engaging moments of any gathering.",
+        "price": "$30"
+    },
+    {
+        "image": "images/img4.jpg",
+        "badges": ["LANDSCAPE", "TOP PICK"],
+        "title": "Breathtaking Landscapes of Nature",
+        "rating": "4.9",
+        "reviews": "550",
+        "duration": "3 hours",
+        "author": "Ethan Brooks",
+        "description": "Known for his artistic landscape shots, Ethan's work is widely published in travel and nature magazines worldwide.",
+        "price": "$20"
+    },
+    {
+        "image": "images/img5.jpg",
+        "badges": ["COMMERCIAL", "BEST SELLER"],
+        "title": "Professional Commercial Photography",
+        "rating": "4.8",
+        "reviews": "710",
+        "duration": "5 hours",
+        "author": "Ava Scott",
+        "description": "Trusted by top brands, Ava excels in delivering commercial photos that make products stand out in every aspect.",
+        "price": "$40"
+    },
+    {
+        "image": "images/img6.jpg",
+        "badges": ["FASHION", "EDITOR'S CHOICE"],
+        "title": "Fashion Photography with Style",
+        "rating": "5.0",
+        "reviews": "620",
+        "duration": "2.5 hours",
+        "author": "Noah Kim",
+        "description": "Renowned fashion photographer with experience in major fashion weeks; brings elegance and edge to every shot.",
+        "price": "$35"
+    }
+]
