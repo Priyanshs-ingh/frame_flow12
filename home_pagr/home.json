@@ -6,7 +6,7 @@
         {"name": "Home", "link": "../home_page/main_page.html"},
         {"name": "Explore", "link": "../Explore_page/explore.html"},
         {"name": "About", "link": "../about_page/about.html"},
-        {"name": "Hire", "link": "../hire_page/hire.html"}
+        {"name": "Hire", "link": "../new_hirepage/new_hire.html"}
       ],
       "contactButton": {"text": "Contact Us", "link": "../about_page/about.html"}
     },

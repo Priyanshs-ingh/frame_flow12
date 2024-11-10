@@ -16,8 +16,10 @@ fetch('data.json')
                     </div>
                     <br>
                     <p>by ${card.author}</p>
-                    <p class="description">${card.description}</p> <!-- Added class "description" -->
+                    <p class="description">${card.description}</p>
                     <p class="price">${card.price}</p>
+                    <!-- Hire Button with Link to Portfolio Page -->
+                    <a href="../PORTFOLIO/portfolio.html?id=${card.id}" class="hire-button">Hire</a>
                 </div>
             </div>
         `).join('');
