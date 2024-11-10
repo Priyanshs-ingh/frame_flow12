@@ -60,32 +60,7 @@
 </body>
 <section class="community-work">
     <h2>Explore the Community Work.</h2>
-    <div class="community-gallery">
-        <div class="photo">
-            <img src="home_page_photographer.jpg" alt="Bridge">
-            <div class="info">
-                <p>Arthur Levyn</p>
-                <span>March 2022</span>
-                <button>View Profile &#10142;</button>
-            </div>
-        </div>
-        <div class="photo">
-            <img src="home_page_pg3.jpg" alt="Mountain">
-            <div class="info">
-                <p>Tessia Erath</p>
-                <span>January 2024</span>
-                <button>View Profile &#10142;</button>
-            </div>
-        </div>
-        <div class="photo">
-            <img src="home_page_ph2.jpg" alt="Stormy Mountains">
-            <div class="info">
-                <p>Keczecs Indrath</p>
-                <span>January 2023</span>
-                <button>View Profile &#10142;</button>
-            </div>
-        </div>
-    </div>
+    <div class="community-gallery" id="communityGallery"></div>
     <a href="#" class="view-all">View All Works →</a>
 </section>
 
@@ -103,97 +78,14 @@
 </section>
 
 <section class="faq-section">
-    <div class="faq-header">
-        <h4>FAQ'S</h4>
-        <h2>Frequently Asked Questions</h2>
-    </div>
-    <div class="faq-content">
-        <div class="faq-column">
-            <details>
-                <summary>What type of photography do you specialize in?</summary>
-                <p>I specialize in Portrait, Landscape, Event, etc. photography, capturing moments that tell unique stories.</p>
-            </details>
-            <details>
-                <summary>How can I book a photography session with you?</summary>
-                <p>You can book a session through our website's booking form or by contacting us directly via email or phone.</p>
-            </details>
-            <details>
-                <summary>What equipment do you use for your photography?</summary>
-                <p>We use a range of professional equipment, including Nikon and Canon DSLRs, to ensure high-quality images.</p>
-            </details>
-            <details>
-                <summary>Can I request a specific location for a session?</summary>
-                <p>Yes, clients are welcome to request specific locations for their photo sessions, and we will do our best to accommodate.</p>
-            </details>
-        </div>
-        <div class="faq-column">
-            <details>
-                <summary>What is your editing process like?</summary>
-                <p>Our editing process involves color correction, retouching, and ensuring each photo reflects the natural beauty of the subject.</p>
-            </details>
-            <details>
-                <summary>Are digital files included in your photography packages?</summary>
-                <p>All our packages include digital files, which will be delivered via a secure online gallery.</p>
-            </details>
-            <details>
-                <summary>Do you offer prints of your photographs?</summary>
-                <p>Yes, prints are available for purchase. Explore the 'Prints' section for more details on sizes and pricing.</p>
-            </details>
-            <details>
-                <summary>How long does it take to receive the edited photos after a session?</summary>
-                <p>Typically, the turnaround time for receiving edited photos is 2-3 weeks, depending on the package selected.</p>
-            </details>
-        </div>
-    </div>
+    <div id="faqHeader" class="faq-header"></div>
+    <div id="faqContent" class="faq-content"></div>
 </section>
 
-<section class="testimonials-section">
-    <h6>TESTIMONIALS</h6>
-    <h1>What Our Clients Say</h1>
-    <p class="total-reviews">Total Reviews 323</p>
-    <!-- <a href="#" class="view-all-testimonials">View All Testimonials →</a> -->
-    <div class="testimonials">
-        <div class="testimonial">
-            <p class="name">Emily Johnson</p>
-            <p class="location">USA, California</p>
-            <p class="review">Had a great time having John for my wedding coverage had some great moments captured so beautifully.</p>
-            <div class="rating">
-                <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span>
-            </div>
-            <div class="social-links">
-                <a href="#"><img src="facebook.png" alt="Facebook"></a>
-                <a href="#"><img src="twitter.png" alt="Twitter"></a>
-                <a href="#"><img src="linkedin.png" alt="LinkedIn"></a>
-            </div>
-        </div>
-        <div class="testimonial">
-            <p class="name">John Smith</p>
-            <p class="location">USA, California</p>
-            <p class="review">Damien has an incredible talent for making every event feel effortless, and the results speak for themselves.</p>
-            <div class="rating">
-                <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span>
-            </div>
-            <div class="social-links">
-                <a href="#"><img src="facebook.png" alt="Facebook"></a>
-                <a href="#"><img src="twitter.png" alt="Twitter"></a>
-                <a href="#"><img src="linkedin.png" alt="LinkedIn"></a>
-            </div>
-        </div>
-        <div class="testimonial">
-            <p class="name">Samantha Davis</p>
-            <p class="location">USA, California</p>
-            <p class="review">I was blown away by Arthur's ability to capture the essence of our wedding day. His photographs are our cherished memories. Great work frameflow.</p>
-            <div class="rating">
-                <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span>
-            </div>
-            <div class="social-links">
-                <a href="#"><img src="facebook.png" alt="Facebook"></a>
-                <a href="#"><img src="twitter.png" alt="Twitter"></a>
-                <a href="#"><img src="linkedin.png" alt="LinkedIn"></a>
-            </div>
-        </div>
-    </div>
+<section class="testimonials-section" id="testimonialsSection">
+    
 </section>
+
 
 <section class="photography-menu">
     
@@ -257,6 +149,313 @@
         </div>
     </div>
 </footer>
+
+<script>
+    const communityWorkData = {
+        "gallery": [
+            {
+                "name": "Arthur Levyn",
+                "date": "March 2022",
+                "image": "home_page_photographer.jpg",
+                "altText": "Bridge",
+                "profileButton": "View Profile →"
+            },
+            {
+                "name": "Tessia Erath",
+                "date": "January 2024",
+                "image": "home_page_pg3.jpg",
+                "altText": "Mountain",
+                "profileButton": "View Profile →"
+            },
+            {
+                "name": "Keczecs Indrath",
+                "date": "January 2023",
+                "image": "home_page_ph2.jpg",
+                "altText": "Stormy Mountains",
+                "profileButton": "View Profile →"
+            }
+        ]
+    };
+    
+    
+    
+    const faqData = {
+        "faqHeader": {
+            "title": "FAQ'S",
+            "subtitle": "Frequently Asked Questions"
+        },
+        "faqs": [
+            {
+                "question": "What type of photography do you specialize in?",
+                "answer": "I specialize in Portrait, Landscape, Event, etc. photography, capturing moments that tell unique stories."
+            },
+            {
+                "question": "How can I book a photography session with you?",
+                "answer": "You can book a session through our website's booking form or by contacting us directly via email or phone."
+            },
+            {
+                "question": "What equipment do you use for your photography?",
+                "answer": "We use a range of professional equipment, including Nikon and Canon DSLRs, to ensure high-quality images."
+            },
+            {
+                "question": "Can I request a specific location for a session?",
+                "answer": "Yes, clients are welcome to request specific locations for their photo sessions, and we will do our best to accommodate."
+            },
+            {
+                "question": "What is your editing process like?",
+                "answer": "Our editing process involves color correction, retouching, and ensuring each photo reflects the natural beauty of the subject."
+            },
+            {
+                "question": "Are digital files included in your photography packages?",
+                "answer": "All our packages include digital files, which will be delivered via a secure online gallery."
+            },
+            {
+                "question": "Do you offer prints of your photographs?",
+                "answer": "Yes, prints are available for purchase. Explore the 'Prints' section for more details on sizes and pricing."
+            },
+            {
+                "question": "How long does it take to receive the edited photos after a session?",
+                "answer": "Typically, the turnaround time for receiving edited photos is 2-3 weeks, depending on the package selected."
+            }
+        ]
+    };
+    
+    
+    const testimonialsData = {
+        "testimonialsSection": {
+            "header": {
+                "smallTitle": "TESTIMONIALS",
+                "mainTitle": "What Our Clients Say",
+                "totalReviews": 323
+            },
+            "testimonials": [
+                {
+                    "name": "Emily Johnson",
+                    "location": "USA, California",
+                    "review": "Had a great time having John for my wedding coverage had some great moments captured so beautifully.",
+                    "rating": 5,
+                    "socialLinks": [
+                        {
+                            "platform": "Facebook",
+                            "url": "#",
+                            "icon": "facebook.png"
+                        },
+                        {
+                            "platform": "Twitter",
+                            "url": "#",
+                            "icon": "twitter.png"
+                        },
+                        {
+                            "platform": "LinkedIn",
+                            "url": "#",
+                            "icon": "linkedin.png"
+                        }
+                    ]
+                },
+                {
+                    "name": "John Smith",
+                    "location": "USA, California",
+                    "review": "Damien has an incredible talent for making every event feel effortless, and the results speak for themselves.",
+                    "rating": 5,
+                    "socialLinks": [
+                        {
+                            "platform": "Facebook",
+                            "url": "#",
+                            "icon": "facebook.png"
+                        },
+                        {
+                            "platform": "Twitter",
+                            "url": "#",
+                            "icon": "twitter.png"
+                        },
+                        {
+                            "platform": "LinkedIn",
+                            "url": "#",
+                            "icon": "linkedin.png"
+                        }
+                    ]
+                },
+                {
+                    "name": "Samantha Davis",
+                    "location": "USA, California",
+                    "review": "I was blown away by Arthur's ability to capture the essence of our wedding day. His photographs are our cherished memories. Great work frameflow.",
+                    "rating": 5,
+                    "socialLinks": [
+                        {
+                            "platform": "Facebook",
+                            "url": "#",
+                            "icon": "facebook.png"
+                        },
+                        {
+                            "platform": "Twitter",
+                            "url": "#",
+                            "icon": "twitter.png"
+                        },
+                        {
+                            "platform": "LinkedIn",
+                            "url": "#",
+                            "icon": "linkedin.png"
+                        }
+                    ]
+                }
+            ]
+        }
+    };
+
+    function renderTestimonials(data) {
+        const section = document.getElementById("testimonialsSection");
+
+        // Create and append the header
+        const header = document.createElement("div");
+        header.innerHTML = `
+            <h6>${data.testimonialsSection.header.smallTitle}</h6>
+            <h1>${data.testimonialsSection.header.mainTitle}</h1>
+            <p class="total-reviews">Total Reviews ${data.testimonialsSection.header.totalReviews}</p>
+        `;
+        section.appendChild(header);
+
+        // Create the container for the testimonials
+        const testimonialsContainer = document.createElement("div");
+        testimonialsContainer.classList.add("testimonials");
+
+        // Loop through each testimonial and create its structure
+        data.testimonialsSection.testimonials.forEach(testimonial => {
+            const testimonialDiv = document.createElement("div");
+            testimonialDiv.classList.add("testimonial");
+
+            // Render the name, location, and review
+            testimonialDiv.innerHTML = `
+                <p class="name">${testimonial.name}</p>
+                <p class="location">${testimonial.location}</p>
+                <p class="review">${testimonial.review}</p>
+            `;
+
+            // Render the rating
+            const ratingDiv = document.createElement("div");
+            ratingDiv.classList.add("rating");
+            for (let i = 0; i < testimonial.rating; i++) {
+                const star = document.createElement("span");
+                star.classList.add("star");
+                star.innerHTML = "&#9733;"; // Star character
+                ratingDiv.appendChild(star);
+            }
+            testimonialDiv.appendChild(ratingDiv);
+
+            // Render social links
+            const socialLinksDiv = document.createElement("div");
+            socialLinksDiv.classList.add("social-links");
+            testimonial.socialLinks.forEach(link => {
+                const socialLink = document.createElement("a");
+                socialLink.href = link.url;
+                const icon = document.createElement("img");
+                icon.src = link.icon;
+                icon.alt = link.platform;
+                socialLink.appendChild(icon);
+                socialLinksDiv.appendChild(socialLink);
+            });
+            testimonialDiv.appendChild(socialLinksDiv);
+
+            // Append the testimonial div to the testimonials container
+            testimonialsContainer.appendChild(testimonialDiv);
+        });
+
+        // Append the testimonials container to the section
+        section.appendChild(testimonialsContainer);
+    }
+
+    // Call the render function
+    renderTestimonials(testimonialsData);
+
+
+    
+
+
+
+    function renderFAQ(data) {
+        // Render FAQ header
+        const headerContainer = document.getElementById("faqHeader");
+        const title = document.createElement("h4");
+        title.textContent = data.faqHeader.title;
+        const subtitle = document.createElement("h2");
+        subtitle.textContent = data.faqHeader.subtitle;
+        headerContainer.appendChild(title);
+        headerContainer.appendChild(subtitle);
+
+        // Render FAQ content
+        const faqContent = document.getElementById("faqContent");
+
+        data.faqs.forEach(faq => {
+            const details = document.createElement("details");
+            const summary = document.createElement("summary");
+            summary.textContent = faq.question;
+            const answer = document.createElement("p");
+            answer.textContent = faq.answer;
+
+            details.appendChild(summary);
+            details.appendChild(answer);
+
+            faqContent.appendChild(details);
+        });
+    }
+
+    // Call the render function
+    renderFAQ(faqData);
+
+
+
+
+
+    
+
+
+
+    function renderCommunityGallery(data) {
+        const galleryContainer = document.getElementById("communityGallery");
+        
+        data.gallery.forEach(item => {
+            // Create the photo div
+            const photoDiv = document.createElement("div");
+            photoDiv.classList.add("photo");
+
+            // Create the img element
+            const img = document.createElement("img");
+            img.src = item.image;
+            img.alt = item.altText;
+            photoDiv.appendChild(img);
+
+            // Create the info div
+            const infoDiv = document.createElement("div");
+            infoDiv.classList.add("info");
+
+            // Add name
+            const name = document.createElement("p");
+            name.textContent = item.name;
+            infoDiv.appendChild(name);
+
+            // Add date
+            const date = document.createElement("span");
+            date.textContent = item.date;
+            infoDiv.appendChild(date);
+
+            // Add button
+            const button = document.createElement("button");
+            button.innerHTML = item.profileButton;
+            infoDiv.appendChild(button);
+
+            // Append infoDiv to photoDiv
+            photoDiv.appendChild(infoDiv);
+
+            // Append photoDiv to galleryContainer
+            galleryContainer.appendChild(photoDiv);
+        });
+    }
+
+    // Call the function to render the gallery
+    renderCommunityGallery(communityWorkData);
+</script>
+
+
+    
 </body>
 
 

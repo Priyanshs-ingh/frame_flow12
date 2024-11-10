@@ -1,0 +1,35 @@
+{
+    "basic": {
+        "price": "₹22,148",
+        "description": "This basic package includes 1 product (4 high quality images per product).",
+        "features": [
+            "4 photos per product",
+            "1 Product",
+            "Lifestyle staging",
+            "Photo retouching"
+        ],
+        "delivery": "7-day delivery"
+    },
+    "standard": {
+        "price": "₹35,000",
+        "description": "This standard package includes 2 products (6 high quality images per product).",
+        "features": [
+            "6 photos per product",
+            "2 Products",
+            "Lifestyle staging",
+            "Advanced retouching"
+        ],
+        "delivery": "5-day delivery"
+    },
+    "premium": {
+        "price": "₹50,000",
+        "description": "This premium package includes 3 products (10 high quality images per product).",
+        "features": [
+            "10 photos per product",
+            "3 Products",
+            "Lifestyle & outdoor staging",
+            "Premium retouching"
+        ],
+        "delivery": "3-day delivery"
+    }
+}
