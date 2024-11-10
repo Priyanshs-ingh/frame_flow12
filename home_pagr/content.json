@@ -1,0 +1,76 @@
+{
+    "header": {
+        "title": "FRAMEFLOW",
+        "navLinks": [
+            { "text": "Home", "link": "../home_page/main_page.html" },
+            { "text": "Explore", "link": "../Explore_page/explore.html" },
+            { "text": "About", "link": "../about_page/about.html" },
+            { "text": "Hire", "link": "../hire_page/hire.html" }
+        ],
+        "contactBtn": { "text": "Contact Us", "link": "../about_page/about.html" }
+    },
+    "hero": {
+        "quote": "Hire The Best Photographers",
+        "title": "FrameFlow",
+        "categories": [
+            { "text": "Event Photography", "link": "#" },
+            { "text": "Commercial Photography", "link": "#" },
+            { "text": "Product Photography", "link": "#" },
+            { "text": "Wedding Photography", "link": "#" },
+            { "text": "Landscape Photography", "link": "#" },
+            { "text": "Branding Photography", "link": "#" },
+            { "text": "Portrait Photography", "link": "#" }
+        ],
+        "bookButton": "Book Right Now!"
+    },
+    "categoriesSection": [
+        { "title": "Event Photography", "imgSrc": "Screenshot 2024-09-11 160229.png" }
+    ],
+    "communityWork": {
+        "title": "Explore the Community Work.",
+        "photos": [
+            {
+                "imgSrc": "home_page_photographer.jpg",
+                "photographer": "Arthur Levyn",
+                "date": "March 2022"
+            },
+            {
+                "imgSrc": "home_page_pg3.jpg",
+                "photographer": "Tessia Erath",
+                "date": "January 2024"
+            },
+            {
+                "imgSrc": "home_page_ph2.jpg",
+                "photographer": "Keczecs Indrath",
+                "date": "January 2023"
+            }
+        ]
+    },
+    "about": {
+        "title": "About FRAMEFLOW",
+        "content": [
+            "FrameFlow is your gateway to stunning photography and tailored event coverage. Our platform connects you with a curated selection of talented photographers...",
+            "Whether you're planning a grand celebration, an intimate gathering, or a professional photoshoot..."
+        ]
+    },
+    "faq": [
+        { "question": "What type of photography do you specialize in?", "answer": "I specialize in Portrait, Landscape, Event, etc." },
+        { "question": "How can I book a photography session with you?", "answer": "You can book a session through our website..." },
+        { "question": "What equipment do you use for your photography?", "answer": "We use a range of professional equipment..." },
+        { "question": "Can I request a specific location for a session?", "answer": "Yes, clients are welcome to request specific locations..." }
+    ],
+    "testimonials": [
+        {
+            "name": "Emily Johnson",
+            "location": "USA, California",
+            "review": "Had a great time having John for my wedding...",
+            "rating": 5
+        },
+        {
+            "name": "John Smith",
+            "location": "USA, California",
+            "review": "Damien has an incredible talent...",
+            "rating": 5
+        }
+    ]
+}

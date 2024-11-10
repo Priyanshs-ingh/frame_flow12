@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header, .footer, .nav-links, .hero, .categories, .community-work, .about-frame-flow, .faq-section, .testimonials-section {
+    padding: 20px;
+}
+
+.navbar h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+.nav-links a {
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.hero .title-area {
+    text-align: center;
+}
+
+.category-links a, .book-button {
+    display: inline-block;
+    margin: 10px;
+    padding: 8px 16px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+}
+
+.testimonials .testimonial {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.footer .footer-content {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f4f4f4;
+}
