@@ -46,7 +46,7 @@ body {
 .profile-pricing-container {
     display: flex;
     justify-content: space-between;
-    padding: 40px;
+    padding: 90px;
     max-width: 1200px;
     margin: 0 auto;
     background-color: #111;
@@ -168,7 +168,7 @@ body {
 .testimonials {
     display: flex;
     gap: 30px;
-    justify-content: center;
+    justify-content:center;
     /* text-align: left; */
 }
 
