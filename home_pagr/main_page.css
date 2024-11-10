@@ -296,14 +296,24 @@ footer {
     text-transform: uppercase;
 }
 
+
+
+
+
 .faq-content {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between; /* Ensures columns are spaced evenly */
+    gap: 20px; /* Adds some space between the two columns */
     margin-top: 20px;
+    flex-wrap: wrap; /* Allows wrapping in case of smaller screens */
 }
 
 .faq-column {
-    width: 45%;
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Stack items vertically within each column */
+    gap: 10px; /* Space between each FAQ item */
+    min-width: 250px; /* Minimum width for responsive behavior */
 }
 
 details {
@@ -326,6 +336,15 @@ summary::-webkit-details-marker {
 details p {
     font-size: 14px;
     margin-top: 10px;
+}
+@media (max-width: 768px) {
+    .faq-content {
+        flex-direction: column; /* Stack columns vertically on small screens */
+    }
+
+    .faq-column {
+        width: 100%; /* Take full width on small screens */
+    }
 }
 
 .testimonials-section {
