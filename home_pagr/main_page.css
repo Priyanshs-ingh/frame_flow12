@@ -48,27 +48,42 @@ body {
     text-decoration: none;
 }
 .hero {
-    font-size:larger;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 10px;
+    flex-direction: column; /* Ensures vertical stacking */
+    align-items: center; /* Center-aligns all child elements */
+    justify-content: center; /* Centers content vertically within the hero section */
+    text-align: center; /* Centers text */
+    padding: 20px; /* Adds padding around the content */
+    width: 100%; /* Ensures the hero section takes full width */
 }
-
 .title-area {
-    text-align: left;
+    width: 100%; /* Ensures the title area takes full width of its container */
 }
+/* Style adjustments for responsiveness */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column; /* Keeps vertical stacking on small screens */
+    }
+
+    .hero img {
+        order: 2; /* Puts the image below the text on smaller screens */
+    }
+
+    .title-area {
+        order: 1; /* Ensures text is above the image on smaller screens */
+    }
+}        
+
 
 .title-area .quote {
-    font-size: 15px;
-    margin-bottom: 10px;
+    font-size: 1.2rem; /* Adjusts the subtitle size */
+    color: #ccc; /* Lighter color for the subtitle */
+    margin-bottom: 15px; /* Space below the subtitle */
 }
-
 .title-area h2 {
-    font-size: 60px;
-    margin: 0px;
+    font-size: 2.5rem; /* Scaled size for better visual impact */
+    color: #fff; /* Ensures the title is white */
 }
-
 .title-area .category-links {
     padding: 20px 0;
 }
@@ -85,17 +100,15 @@ body {
 }
 
 .book-button {
-    padding: 10px 20px;
-    background-color: #6200EA;
-    border: none;
-    color: white;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    text-decoration: none; /* Ensures the link does not have an underline */
-    display: inline-block;
+    font-size: 1.2rem; /* Increases the font size */
+    padding: 12px 25px; /* More padding for a bigger button */
+    margin-top: 20px; /* Adds space above the button */
+    background-color: #ff6347; /* More visible color */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
 }
-
+.book-button:hover {
+    background-color: #ee5a46; /* Darker shade on hover */
+}
 .categories {
     display: flex;
     justify-content: space-around;
