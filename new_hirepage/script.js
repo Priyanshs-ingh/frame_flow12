@@ -1,5 +1,3 @@
-// script.js
-
 // Fetch data from the JSON file and generate the cards
 fetch('data.json')
     .then(response => response.json())
