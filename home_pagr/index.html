@@ -1,75 +1,85 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frame Flow</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <div class="navbar" id="navbar"></div>
-    </header>
-    
-    <main>
-        <section class="hero" id="hero"></section>
-        <section class="community-work" id="community-work"></section>
-        <section class="about-frame-flow" id="about"></section>
-        <section class="faq-section" id="faq"></section>
-        <section class="testimonials-section" id="testimonials"></section>
-    </main>
-
-    <footer class="footer" id="footer"></footer>
-
-    <script src="data.json"></script>
-    <script src="script.js"></script>
-</body>
-</html> -->
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frame Flow</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="main_page.css">
 </head>
 <body>
+    <!-- Header Section -->
     <header>
         <div class="navbar">
-            <h1 id="site-title"></h1>
+            <h1>FRAMEFLOW</h1>
             <nav>
-                <ul id="nav-links" class="nav-links"></ul>
+                <ul class="nav-links">
+                    <li><a href="../home_pagr/main_page.html">Home</a></li>
+                    <li><a href="../Explore_page/explore.html">Explore</a></li>
+                    <li><a href="../about_page/about.html">About</a></li>
+                    <li><a href="../hire_page/hire.html">Hire</a></li>
+                </ul>
             </nav>
-            <a id="contact-btn" class="contact-btn"></a>
+            <a href="../about_page/about.html" class="contact-btn">Contact Us</a>
         </div>
     </header>
+
     <main>
+        <!-- Hero Section -->
         <section class="hero">
             <div class="title-area">
-                <p id="hero-quote" class="quote"></p>
-                <h2 id="hero-title"></h2>
-                <div id="category-links" class="category-links"></div>
+                <p class="quote">Hire The Best Photographers</p>
+                <h2>FrameFlow</h2>
+                <div class="category-links">
+                    <!-- Categories will be populated by JavaScript -->
+                </div>
             </div>
-            <button id="book-button" class="book-button"></button>
+            <button class="book-button">
+                Book Right Now!
+                <i class="arrow-icon">&#10142;</i>
+            </button>
         </section>
-        <section id="categories-section" class="categories"></section>
+
+        <section class="categories">
+            <!-- Example category with image -->
+            <div class="category">
+                <img src="Screenshot 2024-09-11 160229.png" alt="Event Photography">
+                <h3>Event Photography</h3>
+            </div>
+            <!-- Add additional categories with images as necessary -->
+        </section>
+
+        <!-- About Section -->
+        <section class="about-frame-flow">
+            <div class="about-content">
+                <!-- About content will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Community Work Section -->
         <section class="community-work">
-            <h2 id="community-title"></h2>
-            <div id="community-gallery" class="community-gallery"></div>
+            <div class="community-gallery" id="communityGallery"></div>
+            <a href="#" class="view-all">View All Works →</a>
         </section>
-        <section id="about-section" class="about-frame-flow">
-            <h2 id="about-title"></h2>
-            <div id="about-content"></div>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div id="faqHeader" class="faq-header"></div>
+            <div id="faqContent" class="faq-content"></div>
         </section>
-        <section id="faq-section" class="faq-section"></section>
-        <section id="testimonials-section" class="testimonials-section"></section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials-section" id="testimonialsSection"></section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <!-- Footer content will be populated by JavaScript -->
+            </div>
+        </footer>
     </main>
-    <footer id="footer-section" class="footer">
-        <div class="footer-content"></div>
-    </footer>
+
+    <!-- Load JSON data first, then main JavaScript -->
+    <script src="frameflow-data.json" type="application/json"></script>
+    <script src="main.js"></script>
 </body>
 </html>
