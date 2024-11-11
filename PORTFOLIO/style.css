@@ -17,29 +17,33 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #000;
+    background-color: #151515;
 }
 
 .navbar h1 {
-    font-size: 24px;
+    color: #fff;
 }
 
 .navbar ul {
     display: flex;
-    gap: 20px;
-}
-
-.navbar li {
     list-style: none;
-    cursor: pointer;
 }
 
-.contact-button {
-    padding: 10px 20px;
-    border: 1px solid #fff;
-    background: none;
-    cursor: pointer;
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
     color: #fff;
+    text-decoration: none;
+}
+
+.contact-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
 }
 
 /* Profile and Pricing Container */
