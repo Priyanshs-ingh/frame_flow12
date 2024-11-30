@@ -1,0 +1,78 @@
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Page Heading */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+/* Form Container */
+form {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Labels */
+label {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Input and Textarea Fields */
+input, textarea {
+    margin-top: 5px;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    background-color: #2e2e2e;
+    color: #ffffff;
+}
+
+/* Input Focus Effects */
+input:focus, textarea:focus {
+    outline: none;
+    box-shadow: 0 0 5px #0000;
+}
+
+/* Submit Button */
+/* Submit Button */
+button {
+    margin-top: 15px;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffffff; /* White background */
+    color: #000000; /* Black text */
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.1s; /* Smooth hover transition */
+}
+
+/* Button Hover and Active Effects */
+button:hover {
+    background-color: #90ee90; /* Light green background on hover */
+}
+
+button:active {
+    transform: scale(0.98); /* Slightly shrink the button on click */
+}

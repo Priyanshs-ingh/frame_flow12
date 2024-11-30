@@ -124,7 +124,7 @@
 }
 
 .switch-form a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .forgot-pw {
@@ -140,7 +140,7 @@
 
 .forgot-pw a:hover {
     color: #03a9f4;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 /* Responsive adjustments */

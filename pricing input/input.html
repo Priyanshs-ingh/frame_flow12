@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Pricing Tier</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <h1>Create Pricing for a Tier</h1>
+
+        <!-- Tier Selection -->
+        <label for="tierSelect">Select Tier:</label>
+        <select id="tierSelect">
+            <option value="basic" selected>Basic</option>
+            <option value="standard">Standard</option>
+            <option value="premium">Premium</option>
+        </select>
+
+        <!-- Form Container -->
+        <form id="pricingForm" style="display: none;">
+            <label for="price">Price</label>
+            <input type="text" id="price" name="price" required>
+
+            <label for="description">Description</label>
+            <textarea id="description" name="description" rows="4" required></textarea>
+
+            <label for="delivery">Delivery Time</label>
+            <input type="text" id="delivery" name="delivery" required>
+
+            <label for="features">Features (comma-separated)</label>
+            <input type="text" id="features" name="features" required>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        const tierSelect = document.getElementById('tierSelect');
+        const pricingForm = document.getElementById('pricingForm');
+
+        // Function to show the form based on the selected tier
+        function showForm() {
+            pricingForm.style.display = 'block';
+        }
+
+        // Trigger form display when the tier is selected or changed
+        tierSelect.addEventListener('change', showForm);
+
+        // Initialize form display for the default "basic" tier
+        window.onload = function() {
+            showForm();
+        };
+
+        // Form submission logic
+        pricingForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const tier = tierSelect.value; // Get the selected tier
+            const formData = {
+                tier,
+                price: document.getElementById('price').value,
+                description: document.getElementById('description').value,
+                delivery: document.getElementById('delivery').value,
+                features: document.getElementById('features').value.split(',').map(feature => feature.trim())
+            };
+
+            try {
+                const response = await fetch('/api/pricing', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData),
+                });
+
+                if (response.ok) {
+                    alert(`Pricing for ${tier.charAt(0).toUpperCase() + tier.slice(1)} tier created successfully!`);
+                    pricingForm.reset();
+                    tierSelect.value = ''; // Reset the tier selection
+                    pricingForm.style.display = 'none'; // Hide the form again
+                } else {
+                    alert('Error creating pricing tier. Please try again.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again later.');
+            }
+        });
+    </script>
+</body>
+</html>

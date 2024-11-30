@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Card</title>
+    <!-- Link to External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <h1>Join as a Creator</h1>
+        <form id="cardForm">
+            <label for="image">Image URL</label>
+            <input type="url" id="image" name="image" required>
+
+            <label for="badges">Badges (comma-separated)</label>
+            <input type="text" id="badges" name="badges" required>
+
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="rating">Rating</label>
+            <input type="number" step="0.1" id="rating" name="rating" required>
+
+            <label for="reviews">Reviews</label>
+            <input type="number" id="reviews" name="reviews" required>
+
+            <label for="duration">Duration</label>
+            <input type="text" id="duration" name="duration" required>
+
+            <label for="author">Author</label>
+            <input type="text" id="author" name="author" required>
+
+            <label for="description">Description</label>
+            <textarea id="description" name="description" rows="4" required></textarea>
+
+            <label for="price">Price</label>
+            <input type="text" id="price" name="price" required>
+
+            <label for="id">Unique ID</label>
+            <input type="text" id="id" name="id" required>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('cardForm').addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const formData = {
+                image: document.getElementById('image').value,
+                badges: document.getElementById('badges').value.split(',').map(badge => badge.trim()),
+                title: document.getElementById('title').value,
+                rating: parseFloat(document.getElementById('rating').value),
+                reviews: parseInt(document.getElementById('reviews').value),
+                duration: document.getElementById('duration').value,
+                author: document.getElementById('author').value,
+                description: document.getElementById('description').value,
+                price: document.getElementById('price').value,
+                id: document.getElementById('id').value
+            };
+
+            try {
+                const response = await fetch('/api/cards', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData),
+                });
+
+                if (response.ok) {
+                    alert('Card created successfully!');
+                    event.target.reset();
+                } else {
+                    alert('Error creating card. Please try again.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again later.');
+            }
+        });
+    </script>
+</body>
+</html>
