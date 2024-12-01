@@ -48,9 +48,6 @@ app.get("/explore", (req, res) => {
 app.get("/about", (req, res) => {
     res.render("about", { currentPage: "about" });
 });
-app.get("/portfolio", (req, res) => {
-    res.render("portfolio", { currentPage: "portfolio" });
-});
 
 app.get("/hire", async (req, res) => {
     try {
@@ -74,7 +71,20 @@ app.get("/signup", (req, res) => {
 app.get("/creators/new", (req, res) => {
     res.render("new-creator");
 });
-
+app.get("/portfolio", async (req, res) => {
+    try {
+        const portfolioId = req.query.id;
+        const portfolio = await Listing.findById(portfolioId);
+        
+        res.render("portfolio", { 
+            currentPage: "portfolio", 
+            portfolio: portfolio 
+        });
+    } catch (error) {
+        console.error("Portfolio Fetch Error:", error);
+        res.status(500).send('Error retrieving portfolio data');
+    }
+});
 app.post("/creators", async (req, res) => {
     try {
         const newListing = new Listing({

@@ -4,101 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Photography Portfolio</title>
-    <link rel="stylesheet" href="css/portfolio.css">
+    <link rel="stylesheet" href="/css/portfolio.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <!-- <nav class="navbar">
-        <h1>FRAME FLOW</h1>
-        <ul>
-            <li>Home</li>
-            <li>Explore</li>
-            <li>About</li>
-            <li>Hire</li>
-        </ul>
-        <button class="contact-button">Contact Us</button>
-    </nav> -->
-
     <!-- Header part -->
     <%- include("includes/header.ejs") %>
 
-    <!-- Profile and Pricing Section -->
-    <section class="profile-pricing-container">
-        <!-- Profile Section -->
-        <div class="profile-section">
-            <img src="img1.jpg" alt="Photographer" class="profile-img">
+    <% if (portfolio) { %>
+        <!-- Profile and Pricing Section -->
+        <section class="profile-pricing-container">
+            <!-- Profile Section -->
+            <div class="profile-section">
+                <img src="<%= portfolio.image %>" alt="Photographer" class="profile-img">
+                <br>
+                <h2><%= portfolio.title || 'BRANDON MATHWES' %></h2>
+            </div>
+
+            <!-- Pricing Section -->
+            <div class="pricing-container">
+                <div class="pricing-tabs">
+                    <button class="tab-button" onclick="showPricing('standard')">Standard</button>
+                </div>
+                
+                <div id="pricingContent">
+                    <h3>Standard Package - $<%= portfolio.standard.price %></h3>
+                    <br>
+                    <br>
+
+                    <p><%= portfolio.standard.description %></p>
+                    <ul><br>
+                        <% portfolio.standard.features.forEach(function(feature) { %>
+                            <li><%= feature %></li>
+                        <% }); %>
+                    </ul><br>
+                    <p>Delivery: <%= portfolio.standard.delivery %></p>
+                </div>
+                <button class="contact-button">Continue</button>
+            </div>
+        </section>
+
+        <!-- Work Section -->
+        <section class="work-section">
+            <h1>My Work</h1>
+            <h3>Get a glimpse of my skillset</h3> 
             <br>
-            <h2>BRANDON MATHWES</h2>
-        </div>
-
-        <!-- Pricing Section -->
-        <div class="pricing-container">
-            <div class="pricing-tabs">
-                <button class="tab-button active" onclick="showPricing('basic')">Basic</button>
-                <button class="tab-button" onclick="showPricing('standard')">Standard</button>
-                <button class="tab-button" onclick="showPricing('premium')">Premium</button>
+            <br>
+            <div class="gallery">
+                <img src="<%= portfolio.image %>" alt="Work Image">
             </div>
-            
-            <div id="pricingContent"></div>
-            <button class="contact-button">Continue</button>
-        </div>
-    </section>
+        </section>
 
-    <!-- Work Section -->
-    <section class="work-section">
-        <h1>My Work</h1>
-        <h3>Get a glimpse of my skillset</h3> 
-        <br>
-        <br>
-        <div class="gallery">
-            <img src="Screenshot 2024-11-10 171102.png" alt="Work Image 1">
-            <!-- <img src="work2.jpg" alt="Work Image 2">
-            <img src="work3.jpg" alt="Work Image 3">
-            <img src="work4.jpg" alt="Work Image 4">
-            <img src="work5.jpg" alt="Work Image 5">
-            <img src="work6.jpg" alt="Work Image 6"> -->
-        </div>
-    </section>
+        <!-- Strengths Section -->
+        <section class="strengths-section">
+            <h2>My Strengths</h2>
+            <br>
+            <br>
+            <ul>
+                <% portfolio.strengths.split(',').forEach(function(strength) { %>
+                    <li><%= strength.trim() %></li>
+                <% }); %>
+            </ul>
+        </section>
+    <% } else { %>
+        <section class="no-portfolio">
+            <h2>Portfolio Not Available</h2>
+            <p>We're sorry, but the portfolio information could not be found.</p>
+        </section>
+    <% } %>
 
-    <!-- Strengths Section -->
-    <section class="strengths-section">
-        <h2>My Strengths</h2>
-        <br>
-        <br>
-        <ul>
-            <li>Expert in capturing candid and staged shots for authentic, engaging images.</li>
-            <li>Advanced in photo editing using Adobe Photoshop and Lightroom.</li>
-            <li>Versatile across portrait, landscape, product, and event photography.</li>
-            <li>Skilled in composition and lighting for dynamic photos.</li>
-            <li>Client-centered approach, working closely to meet each client’s vision.</li>
-            <li>Meticulous attention to detail for high-quality, polished images.</li>
-        </ul>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonial-section">
-        <h2>Testimonials</h2>
-        <br>
-        
-        <div class="testimonials">
-            <div class="testimonial">
-                <p>"Oliver's unique eye for urban landscapes has brought our campaign to life. His ability to capture the soul of the city is unparalleled."</p>
-                <span>Emily Clark, Marketing Director - Cityscape Magazine</span>
-            </div>
-            <div class="testimonial">
-                <p>"I hired Oliver for a personal photoshoot, and he exceeded all expectations. His work is not just photography; it's storytelling at its finest."</p>
-                <span>Liam Thompson, Entrepreneur</span>
-            </div>
-            <div class="testimonial">
-                <p>"Oliver's workshop opened my eyes to the beauty of urban photography. His guidance and techniques were invaluable. A true master of his craft!"</p>
-                <span>Sarah Jenkins, Aspiring Photographer</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer part -->
-    <%- include("includes/footer.ejs") %>
-
-    <script src="pricing.js"></script>
+    <script>
+        function showPricing(type) {
+            // Simple function to show pricing (you can expand this)
+            console.log(`Showing ${type} pricing`);
+        }
+    </script>
 </body>
 </html>

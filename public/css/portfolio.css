@@ -81,10 +81,10 @@ body {
 /* Pricing Section */
 .pricing-container {
     background-color: #000;
-    color: #fff;
+    color: #fcf9f9;
     padding: 4%;
     border-radius: 8px;
-    text-align: center;
+    text-align: left;
     width: 40%;
 }
 
@@ -92,7 +92,7 @@ body {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
-    background: #f0f0f0;
+    background: #b9a80a;
 }
 
 .tab-button {
@@ -100,7 +100,7 @@ body {
     cursor: pointer;
     margin: 0 5px;
     border: lightgray;
-    background: #f0f0f0;
+    background: #b9a80a;
     color: #000;
     /* border-radius: 15px; */
 }
