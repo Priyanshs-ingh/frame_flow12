@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photographer Listing Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Join as a Creator</h1>
+            <p>Fill in the details to join as a creator and add your pricing details for clients to see.</p>
+        </header>
+
+        <!-- Section 1: Join as Creator -->
+        <section>
+            <h2>Present youself the way you want</h2><br>
+            <form id="creatorForm">
+                <label for="image">Profile Image URL</label>
+                <input type="text" id="image" name="image" placeholder="Enter image URL" required>
+
+                <label for="badges">Specialties/Tags (comma-separated)</label>
+                <input type="text" id="badges" name="badges" placeholder="e.g., Wedding, Portrait, Travel" required>
+
+                <label for="title">Name</label>
+                <input type="text" id="title" name="title" placeholder="Enter your name" required>
+
+                <!-- <label for="author">Location</label>
+                <input type="text" id="author" name="author" placeholder="Enter your city or location" required> -->
+
+                <label for="description">Description</label>
+                <textarea id="description" name="description" rows="4" placeholder="Write about your photography journey" required></textarea>
+
+               
+
+                <button type="submit" class="creator-btn">Submit Creator Details</button>
+            </form>
+        </section>
+
+        <br><br>
+        <hr>
+        <br>
+        <!-- Section 2: Standard Pricing -->
+        <section>
+            <h2>Standard Pricing Details</h2>
+            <form id="pricingForm">
+                <label for="standardPrice">Standard Price</label>
+                <input type="text" id="standardPrice" name="standardPrice" placeholder="e.g., $500" required>
+
+                <label for="standardDescription">Package Description</label>
+                <textarea id="standardDescription" name="standardDescription" rows="4" placeholder="Describe what the package includes" required></textarea>
+
+                <label for="standardFeatures">Features (comma-separated)</label>
+                <input type="text" id="standardFeatures" name="standardFeatures" placeholder="e.g., 20 edited photos, 2-hour session" required>
+
+                <label for="standardDelivery">Delivery Time</label>
+                <input type="text" id="standardDelivery" name="standardDelivery" placeholder="e.g., 7 days" required>
+
+                <label for="strengths">Your Strengths</label>
+                <textarea id="strengths" name="strengths" rows="4" placeholder="Describe your strengths and skills" required></textarea>
+
+                <button type="submit" class="pricing-btn">Submit Pricing Details</button>
+            </form>
+        </section>
+    </div>
+
+    <script>
+        // Handle Creator Form Submission
+        const creatorForm = document.getElementById('creatorForm');
+        creatorForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const creatorData = {
+                image: document.getElementById('image').value,
+                badges: document.getElementById('badges').value.split(',').map(tag => tag.trim()),
+                title: document.getElementById('title').value,
+                author: document.getElementById('author').value,
+                description: document.getElementById('description').value,
+                strengths: document.getElementById('strengths').value
+            };
+
+            try {
+                const response = await fetch('/api/creators', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(creatorData),
+                });
+
+                if (response.ok) {
+                    alert('Creator details submitted successfully!');
+                    creatorForm.reset();
+                } else {
+                    alert('Error submitting creator details.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            }
+        });
+
+        // Handle Pricing Form Submission
+        const pricingForm = document.getElementById('pricingForm');
+        pricingForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const pricingData = {
+                standard: {
+                    price: document.getElementById('standardPrice').value,
+                    description: document.getElementById('standardDescription').value,
+                    features: document.getElementById('standardFeatures').value.split(',').map(feature => feature.trim()),
+                    delivery: document.getElementById('standardDelivery').value
+                }
+            };
+
+            try {
+                const response = await fetch('/api/pricing', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(pricingData),
+                });
+
+                if (response.ok) {
+                    alert('Pricing details submitted successfully!');
+                    pricingForm.reset();
+                } else {
+                    alert('Error submitting pricing details.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            }
+        });
+    </script>
+</body>
+</html>
