@@ -143,10 +143,10 @@ body {
 
 /* join as a creator button */
 .add-creator-btn {
-    background-color: purple; /* Purple background */
+    background-color: rgba(32, 12, 249, 0.659); /* Purple background */
     color: white; /* White text for better contrast */
     font-size: 18px; /* Smaller font size */
-    padding: 5px 10px; /* Adjust padding to make it smaller */
+    padding: 8px 12px; /* Adjust padding to make it smaller */
     border: none; /* Remove any default borders */
     border-radius: 4px; /* Optional: Add rounded corners */
     text-decoration: none; /* Remove underline */
