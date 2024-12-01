@@ -141,6 +141,23 @@ body {
     margin-top: 10px;
 }
 
+/* join as a creator button */
+.add-creator-btn {
+    background-color: purple; /* Purple background */
+    color: white; /* White text for better contrast */
+    font-size: 18px; /* Smaller font size */
+    padding: 5px 10px; /* Adjust padding to make it smaller */
+    border: none; /* Remove any default borders */
+    border-radius: 4px; /* Optional: Add rounded corners */
+    text-decoration: none; /* Remove underline */
+    cursor: pointer; /* Pointer cursor on hover */
+  }
+  
+  .add-creator-btn:hover {
+    background-color: darkviolet; /* Darker purple for hover effect */
+  }
+  
+
 /* Hire Button */
 .hire-button {
     display: inline-block;
@@ -165,6 +182,25 @@ body {
 .hire-button:active {
     background-color: #d35400;
 }
+
+/* edit button styling */
+.edit-button {
+    background-color: darkblue; /* Light blue background */
+    color: white; /* White text */
+    font-size: 14px; /* Font size */
+    padding: 8px 15px; /* Padding to make it visually appealing */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline for links */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  .edit-button:hover {
+    background-color: deepskyblue; /* Slightly darker blue on hover */
+  }
+  
+
 
 /* Footer */
 footer {
