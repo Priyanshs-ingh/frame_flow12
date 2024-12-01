@@ -57,14 +57,46 @@
         <section class="testimonials-section" id="testimonialsSection"></section>
 
         <!-- Footer -->
-        
     </main>
 
     <!-- Footer part -->
     <%- include("includes/footer.ejs") %>
 
     <!-- Load JSON data first, then main JavaScript -->
-    <script src="frameflow-data.json" type="application/json"></script>
+    <script>
+        // Attach the JSON data to the window object
+        window.frameflowData = <%- JSON.stringify(frameflowData) %>;
+    </script>
     <script src="/js/home.js"></script>
 </body>
 </html>
+<!-- ```
+
+The key changes are:
+
+1. Created a `HomeDataManager` class that encapsulates all the rendering logic
+2. Added a static `load()` method to instantiate the class
+3. Made the rendering methods part of the class
+4. In the EJS template, added a script to attach the JSON data to the `window` object
+5. Replaced the previous `home.js` with `HomeDataManager.js`
+
+On the server-side (likely in your Express route), you'll need to pass the JSON data to the template. Here's an example of how that might look:
+
+```javascript
+router.get('/', (req, res) => {
+    // Load your JSON data 
+    const frameflowData = require('./path/to/frameflow-data.json');
+    
+    // Pass the data to the template
+    res.render('home', { frameflowData });
+});
+```
+
+This approach offers several benefits:
+- Encapsulates all rendering logic within a single class
+- Uses OOP principles
+- Removes the need for `fetch()`
+- Passes data directly from the server to the client
+- Keeps the code modular and easy to maintain
+
+Would you like me to elaborate on any part of the implementation? -->

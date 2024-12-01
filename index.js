@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 const path = require("path");
 const Listing = require("./scripts/listing");
+const fs = require('fs');
 
 const app = express();
 const port = 5000;
@@ -31,13 +32,18 @@ app.use("/assets", express.static(path.join(__dirname, "assets")));
 app.use("/data", express.static(path.join(__dirname, "data")));
 
 // Routes for CRUD Operations
-app.get("/new_hire", async (req, res) => {
+
+app.get('/', (req, res) => {
     try {
-        const listings = await Listing.find(); // Fetch all listings from the database
-        res.render('new_hire', { listings }); // Pass the listings data to the EJS template
+        // Read the JSON file directly
+        const jsonPath = path.join(__dirname, '/data/home.json');
+        const frameflowData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+        
+        // Pass the data to the template
+        res.render('home', { frameflowData });
     } catch (error) {
-        console.error(error);
-        res.status(500).send('Error retrieving data');
+        console.error('Error loading JSON data:', error);
+        res.status(500).send('Error loading page data');
     }
 });
 
@@ -45,8 +51,22 @@ app.get("/explore", (req, res) => {
     res.render("explore", { currentPage: "explore" });
 });
 
+// app.get("/about", (req, res) => {
+//     res.render("about", { currentPage: "about" });
+// });
+
 app.get("/about", (req, res) => {
-    res.render("about", { currentPage: "about" });
+    try {
+        // Read the JSON file directly
+        const jsonPath = path.join(__dirname, '/data/about-data.json');
+        const aboutPageData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+        
+        // Pass the data to the template
+        res.render('about', { aboutPageData });
+    } catch (error) {
+        console.error('Error loading About page JSON data:', error);
+        res.status(500).send('Error loading about page data');
+    }
 });
 
 app.get("/hire", async (req, res) => {

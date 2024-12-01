@@ -7,20 +7,14 @@
     <link rel="stylesheet" href="/css/about.css">
 </head>
 <body>
-
     <%- include("includes/header.ejs") %>
 
     <!-- About Us Section -->
     <section class="about-us">
-        <h2>About Us</h2>
-        <p>
-            Welcome to our platform, a dedicated space designed exclusively for photographers to showcase their unique talents and connect with clients who appreciate their craft. Whether you're an emerging artist or an established professional, our platform gives you the opportunity to present your portfolio to a wider audience, find new projects, and grow your career. For clients, we provide an easy-to-navigate space to discover and hire photographers who match their vision, ensuring that each project is backed by creativity, professionalism, and passion. Here, creativity meets opportunity, and every photograph tells a story waiting to be captured.
-        </p>
+        <h2></h2>
+        <p></p>
         <div class="image-gallery">
             <img src="assets/images/about/Screenshot 2024-09-27 223237.png">
-            <!-- <img src="image2.jpg" alt="Gallery Image 2">
-            <img src="image3.jpg" alt="Gallery Image 3">
-            <img src="image4.jpg" alt="Gallery Image 4"> -->
         </div>
     </section>
 
@@ -28,53 +22,73 @@
     <section class="vision">
         <div class="vision-content">
             <div class="vision-text">
-                <h2>OUR VISION</h2>
-                <p>
-                    Our vision is to create a dynamic platform where photographers can effortlessly showcase their artistry, connect with potential clients, and turn their passion into thriving careers. We aim to be the go-to hub for photography talent, where creativity meets opportunity, enabling both emerging and established photographers to shine and grow in a competitive market.
-                </p>
-                <h3>WORKFLOW</h3>
-                <p>
-                    WORKFLOW Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit itaque officiis, quisquam natus doloribus blanditiis. Eaque, dolorem iure modi fugit eos obcaecati est, hic totam sunt quo cumque error eligendi.
-                </p>
-                <h4>VALUES</h4>
-                <p>
-                    VALUES Lorem ipsum dolor sit amet consectetur adipisicing elit. At corrupti, aut incidunt quae provident ipsum ab alias nemo? In ipsum autem nemo ab laborum aliquid reprehenderit eius. Deleniti, saepe nam.
-                </p>
+                <h2></h2>
+                <p></p>
+                <h3></h3>
+                <p></p>
+                <h4></h4>
+                <p></p>
             </div>
             <div class="vision-image">
-                <!-- Add your image source here -->
                 <img src="assets/images/about/HOMEPIC.png" alt="Our Vision">
             </div>
         </div>
     </section>
-    
 
     <section class="connect-section">
-        <h2>Connect With Us</h2>
+        <h2></h2>
         <div class="connect-content">
             <div class="connect-text">
-                <p>We'd love to stay connected! Follow us on social media for the latest updates, behind-the-scenes content, and more.</p>
+                <p></p>
                 <br>
-            <p2>FRAMEFLOW</p2>
+                <p2></p2>
             </div>
             <div class="social-icons">
-                <a href="https://www.instagram.com/priyanshsingh7322/?utm_source=ig_web_button_share_sheet" target="_blank">
-                    <img src="assets/images/about/facebook.png" alt="Facebook" class="circle-icon">
-                </a>
-                <a href="https://www.instagram.com/ninadw25/?utm_source=ig_web_button_share_sheet" target="_blank">
-                    <img src="assets/images/about/download.jpg" alt="instagram" class="circle-icon">
-                </a>
-                <a href="https://www.instagram.com/pseudo_v/" target="_blank">
-                    <img src="assets/images/about/linkedin.png" alt="LinkedIn" class="circle-icon">
-                </a>
+                <!-- Social icons will be populated by JavaScript -->
             </div>
         </div>
     </section>
-    
 
     <!-- Footer -->
-    <!-- Footer part -->
     <%- include("includes/footer.ejs") %>
     
+    <script>
+        // Attach the JSON data to the window object
+        window.aboutPageData = <%- JSON.stringify(aboutPageData) %>;
+    </script>
+    <script src="/js/about.js"></script>
 </body>
 </html>
+```
+<!-- 
+4. Update your Express route in `index.js`:
+
+```javascript
+app.get("/about", (req, res) => {
+    try {
+        // Read the JSON file directly
+        const jsonPath = path.join(__dirname, '/data/about-data.json');
+        const aboutPageData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+        
+        // Pass the data to the template
+        res.render('about', { aboutPageData });
+    } catch (error) {
+        console.error('Error loading About page JSON data:', error);
+        res.status(500).send('Error loading about page data');
+    }
+});
+```
+
+Key changes:
+1. Created a separate JSON file for all text content
+2. Developed a JavaScript class to dynamically render the content
+3. Modified the EJS template to have placeholders for dynamic content
+4. Updated the route to read and pass the JSON data
+
+The benefits of this approach:
+- Separates content from presentation
+- Makes content easily editable
+- Allows for dynamic rendering
+- Keeps the page structure clean
+
+Would you like me to explain or modify anything about this implementation? -->
